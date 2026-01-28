@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>経歴紹介ページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+     <link rel="icon" type="image/png" href="favicon-16x16.png">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- JS -->
+    <script src="formspree.js"></script>
+    <script src="sort.js"></script>
+</head>
+
+<body>
+
+    <!-- 全体ラッパー -->
+    <main class="container">
+
+        <!-- ヘッダー プロフィール -->
+        <header class="page-header">
+            <section class="section">
+                <div class="hero-title">ＰＯＲＴＦＯＬＩＯ</div>
+                <div class="profile">
+                    <p class="ruby">こみなみ　 こうさく</p>
+                    <h1>古南 孝朔</h1>
+                    <p class="role">SE/システムエンジニア</p>
+                    <div class="profile-text">
+                        <p class="profile-sentence">大学在学時にプログラミングへ興味を持ち独学を開始、</p>
+                        <p class="profile-sentence">オンライン学習サービスでHTML,CSS,JavaScript,その他バックエンド言語について半年～1年ほど学習。</p>
+                        <p class="profile-sentence">2025年11月M＆Cシステム株式会社へシステムエンジニアとして入社、3ヵ月のJava研修を受講。</p>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+
+        <!-- スキルセクション -->
+        <section class="section">
+            <h2 class="section-title">スキル</h2>
+
+            <!-- バッジ一覧 -->
+            <div class="skill-list">
+                <span class="skill-badge" data-skill="フォーム実装 / セクション設計">HTML</span>
+                <span class="skill-badge" data-skill="Flexbox / Grid / レスポンシブ対応">CSS</span>
+                <span class="skill-badge" data-skill="イベント処理 / Ajax通信 / API連携">JavaScript</span>
+                <span class="skill-badge" data-skill="JDBC / CRUD処理 / 入力バリデーション / 例外処理">Java</span>
+                <span class="skill-badge" data-skill="Spring Boot / MVC / Thymeleaf / JPA / BCrypt">Spring</span>
+                <span class="skill-badge" data-skill="基本CRUD / 条件検索 / LIKE検索">Oracle SQL</span>
+            </div>
+        </section>
+        <!-- 経歴セクション -->
+        <section class="section">
+            <h2 class="section-title">経歴</h2>
+            <input class="link" type="button" id="sort-new" value="新しい順" />
+            <input class="link" type="button" id="sort-old" value="古い順" />
+            <!-- カードレイアウト -->
+            <div class="card-grid history-container">
+                <article class="card history" data-date="2026-01-30">
+                    <h3>2025/12/18 - 2026/1/30</h3>
+                    <p class="history-sentence">研修後半、HTML, CSS, JavaScript, Springなど</p>
+                    <p class="history-sentence">フロントエンド言語からサーバーサイドフレームワークまで幅広く学習。</p>
+                    <p class="history-sentence">個人開発演習では社員管理WEBアプリを開発。</p>
+                </article>
+
+                <article class="card history" data-date="2025-12-17">
+                    <h3>2025/11/01 - 2025/12/17</h3>
+                    <p class="history-sentence">M＆Cシステム株式会社に入社、研修の受講を開始。</p>
+                    <p class="history-sentence">java, Oracle, SQLについて学習、主体的に学習へ取り組みチーム開発演習では進行役を務める。</p>
+                </article>
+
+                <article class="card history" data-date="2025-11-01">
+                    <h3>入社以前 - 2025/11/01</h3>
+                    <p class="history-sentence">オンライン学習サービスである、Progate, Udemyを活用しプログラミングについて独学。</p>
+                    <p class="history-sentence">HTML, CSS, JavaScript, Node.jsを重点的に学ぶ。</p>
+                    <p class="history-sentence">Node.jsのフレームワークであるexpressに触れ、<br>http通信, JSON, RESTAPI,
+                        ルーティング設計などWEB開発の前提知識を得る。</p>
+                </article>
+            </div>
+        </section>
+
+
+        <!-- 成果物セクション -->
+        <section class="section">
+            <h2 class="section-title">成果物</h2>
+
+            <div class="card-grid">
+
+                <article class="card" id="card1">
+                    <h3>ポートフォリオサイト</h3>
+                    <p>
+                        HTML・CSSのみを用いて、Tailwind CSS風のデザインを実装しました。<br>
+                        コンポーネントの共通化や余白・配色を意識し、
+                        保守性と視認性を重視しました。
+                    </p>
+                    <a href="#work1" class="link">詳細を見る</a>
+                </article>
+
+                <article class="card" id="card2">
+                    <h3>社員管理コンソールアプリケーション</h3>
+                    <p>
+                        JDBCを用いて、社員情報の登録・更新・削除・検索(CRUD)機能を実装しました。<br>
+                        Java研修前半の開発演習として、GitHubを用いたチーム開発を経験し、実装だけでなく仕様の確認やテストケース入力など役割分担を意識して取り組みました。
+                    </p>
+                    <a href="#work2" class="link">詳細を見る</a>
+                </article>
+                
+                <article class="card" id="card3">
+                    <h3>社員管理WEBアプリケーション</h3>
+                    <p>
+                        Springを用いて、ブラウザから操作可能な社員管理アプリを開発しました。<br>
+                        パスワードのハッシュ化、非同期ページング、CSV入出力など、実務を想定した機能を実装しました。
+                    </p>
+                    <a href="#work3" class="link">詳細を見る</a><br>
+                    <a href="./work3.html" class="link">アプリ紹介ページへ</a>
+                </article>
+            </div>
+        </section>
+
+        <!--		所属企業セクション-->
+        <section class="section">
+            <h2 class="section-title">所属企業</h2>
+            <article class="card">
+                <h3><a class="link" href="https://mandcsys-jp.com/">M＆Cシステム株式会社</a></h3>
+                <p>大阪市西区西本町を拠点とし、業務系システム開発・ITエンジニア派遣・人材紹介・WEBサイト制作、情報セキュリティ研修など、お客様に最適なソリューションをご提供いたします。
+                    <br><span class="quote">公式HPより引用</span>
+                </p>
+            </article>
+        </section>
+
+        <!--    コンタクトセクション-->
+        <section class="section contact-section">
+            <h2 class="section-title">CONTACT</h2>
+
+            <p class="contact-lead">
+                お問い合わせの際は以下のフォームをご利用ください。<br>
+                送信時に作成されるメールの宛先は、古南の社用Gmailとなります。
+            </p>
+
+
+            <form id="contact-form" action="https://formspree.io/f/mvzablen" method="post">
+                <div class="contact-sender-info">
+                    <label for="Inquirer">お名前
+                    </label>
+                    <input class="card contact-card inquirer-input" type="text" name="Inquirer" required />
+
+                    <label for="email">メールアドレス
+                    </label>
+                    <input class="card contact-card" type="email" name="email" required />
+                </div>
+
+                <label for="_subject">件名</label>
+                <input class="card contact-card" type="text" name="_subject" />
+
+                <label for="message">本文</label>
+                <textarea class="card contact-card" type="text" name="message" required></textarea>
+
+                <button id="contact-form-button" type="submit">送信</button>
+                <p id="contact-form-status"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- モーダルカード（最初は非表示） -->
+    <div id="work1" class="card modal-card">
+
+        <h2>ポートフォリオサイト</h2>
+        <div class="modal-card-explanation">
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>仕様</h3>
+                    <p>使用技術：HTML,CSS,JavaScript</p>
+                    <p>目的：研修成果報告会での自己紹介用途</p>
+                    <p>機能/概要：</p>
+                    <p>・プロフィール(氏名・役割)の表示</p>
+                    <p>・経歴、スキル、成果物の一覧表示</p>
+                    <p>・視認性を重視したレイアウト</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>工夫した点</h3>
+                    <p>・CSSフレームワークであるTailWindをイメージし、可読性、再利用性を考慮した設計にしました。</p>
+                    <p>・バッジ(スキルセクションで採用)、カード(経歴、成果物、CONTACTセクションで採用)を共通コンポーネントとして定義し、
+                        デザインの統一と保守性の向上に努めました。</p>
+                    <p>・余白を十分に確保することで、情報量の密度過多を回避し、視認性を損なわない構成を意識しました。</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+
+                <div class="explanation-sentence">
+                    <h3>改善点・挑戦したいこと</h3>
+                    <p>・JavaScriptを用いて、モーダルウィンドウ表示時にフェードインアニメーションの追加をする</p>
+                    <p>・DBと連携して経歴やスキルをサーバーへ保存する</p>
+                    <p>・バックエンド、編集画面、編集機能を実装してページから経歴やスキルを追加、削除、編集可能にする</p>
+                    <p>・実際にTailWindを利用してデザインを実装する</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>実装にあたって学習したこと</h3>
+                    <p>・UXを意識したデザイン</p>
+                    <p>・CSSのみでのモーダル制御</p>
+                    <p>・JavaScriptによるソート処理</p>
+                    <p>・Formspreeによるメール送信機能</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="modal-card-link"><a class="link" href="#">成果物のリンク</a></div>
+        <div class="under-close"><a href="#card1" class="link">閉じる</a></div>
+
+    </div>
+
+    <div id="work2" class="card modal-card">
+
+        <h2>社員管理コンソールアプリケーション</h2>
+
+        <div class="modal-card-explanation">
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>仕様</h3>
+                    <p>使用技術：Java・JDBC・Oracle・SQL</p>
+                    <p>目的：研修前半範囲の理解度確認／チーム(3人)での開発を経験</p>
+                    <p>機能/概要：</p>
+                    <p>・検索、登録、更新、削除(CRUD)機能</p>
+                    <p>・不正な値の入力チェック、例外処理</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>工夫した点</h3>
+                    <p>・実装担当者の画面をチームで共有することで、質問や相談を促進し、作業の滞りを削減しました。</p>
+                    <p>・コードには処理の意図や流れを簡潔にまとめたコメントを記述し、可読性の向上へ務めました。</p>
+                    <p>・GitHubでのコンフリクトを避けるため、コミットやプッシュ、プル時の声掛けや連絡を徹底しました。</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>改善点・挑戦したいこと</h3>
+                    <p>・ログイン機能の実装</p>
+                    <p>・ユーザー権限管理による機能制限の実装</p>
+                    <p>・編集ログの記録、表示機能の実装</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>実装にあたって学習したこと</h3>
+                    <p>・Java,SQLの基本構文</p>
+                    <p>・JDBCでのCRUD処理</p>
+                    <p>・入力例外処理の実装</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-card-link">
+            <a class="link" href="https://github.com/kominamishayou/console_app_teamB.git">成果物のGitHubリンク</a>
+        </div>
+        <div class="under-close">
+            <a href="#card2" class="link under-close">閉じる</a>
+        </div>
+
+    </div>
+    
+    <div id="work3" class="card modal-card">
+
+        <h2>社員管理WEBアプリケーション</h2>
+
+        <div class="modal-card-explanation">
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>仕様</h3>
+                    <p>使用技術：Java・Spring・Thymeleaf・JPA・HTML・CSS・JavaScript・Ajax・Oracle</p>
+                    <p>目的：研修の総合理解度確認/フルスタック開発を経験</p>
+                    <p>機能/概要：</p>
+                    <p>・ログイン認証</p>
+                    <p>・検索、登録、更新、削除(CRUD)機能</p>
+                    <p>・権限によるアクセス制限</p>
+                    <p>・CSV入出力(Excel対応)</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>工夫した点</h3>
+                    <p>・パスワード登録、照合でハッシュ化を採用することでセキュリティの向上へつなげています。</p>
+                    <p>・Excelへ対応したCSV入出力機能の実装により、情報の管理を容易にしました。</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>改善点・挑戦したいこと</h3>
+                    <p>・操作ログ記録機能の実装</p>
+                    <p>・Excelファイル(.xlsx, .xls)の入力機能の実装</p>
+                    <p>・クラウドインフラでのデプロイ</p>
+                </div>
+            </div>
+
+            <div class="explanation-card">
+                <div class="explanation-sentence">
+                    <h3>実装にあたって学習したこと</h3>
+                    <p>・Springの基本概念(DI,MVCモデルなど)</p>
+                    <p>・Thymeleaf</p>
+                    <p>・Ajax</p>
+                    <p>・CSVパース</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-card-link">
+            <a class="link" href="https://github.com/kominamishayou/rt2-spring-app.git">成果物のGitHubリンク</a>
+        </div>
+        <div class="under-close">
+            <a href="#card2" class="link under-close">閉じる</a>
+        </div>
+
+    </div>
+
+    <a href="#card1" id="overlay"></a>
+
+</body>
+
+</html>

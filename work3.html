@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>社員管理WEBアプリ紹介</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="favicon-16x16.png">
+    <!--CSS-->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+    <!-- JS -->
+</head>
+
+<body>
+    <main class="container">
+        <header class="page-header">
+            <section class="section">
+                <div class="hero-title" style="color: black">社員管理WEBアプリ 紹介ページ</div>
+                <div>
+                    <h1>ページ概要</h1>
+                    <div>
+                        <p class="work-sentence">3ヵ月間受講したJava研修の取り組みである個人開発演習において</p>
+                        <p class="work-sentence">社員管理WEBアプリケーションを開発しました。</p>
+                        <br>
+                        <p class="work-sentence">こちらのページでは開発したアプリについてご紹介いたします。</p>
+                        <p class="work-sentence">要件、機能、使用技術などについてまとめております。</p>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">アプリURL</h2>
+            <div class="card-none-hover">
+                <a href="http://localhost:7779/spring_crud/" target="_blank" class="link"
+                    style="font-size: 1.2rem;">ログインページ</a>
+                <p class="work-sentence">※サーバー起動時のみ有効</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">個人開発演習の概要（開発要件）</h2>
+            <div class="card-none-hover">
+                <p class="work-sentence"><strong>目的</strong>: 研修3ヶ月目までに学んだ講義内容の理解度、及び実装力を測ること。</p>
+                <p class="work-sentence"><strong>内容</strong>: 社員の情報を一元管理（検索、登録、変更、削除）する Web アプリケーションの開発</p>
+                <br>
+                <p class="work-sentence"><strong>演習形式</strong>:</p>
+                <p class="work-sentence">予め提示されたシステム要件に沿って実装を行う。 </p>
+                <p class="work-sentence">要件機能の実装を終えたら、独自機能の実装を行う。</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">機能・使用技術</h2>
+            <div class="card-none-hover">
+                <h3 class="section-sub-title">要件機能</h3>
+                <div class="table-wrap">
+                    <table class="feature-table">
+                        <tr>
+                            <th>機能名</th>
+                            <th>内容</th>
+                            <th>補足</th>
+                        </tr>
+                        <tr>
+                            <td>認証機能</td>
+                            <td>ログイン・ログアウトが可能</td>
+                            <td>未ログイン時はログイン画面のみアクセス可能</td>
+                        </tr>
+                        <tr>
+                            <td>権限管理機能</td>
+                            <td>管理者・一般の二段階</td>
+                            <td>権限差で操作可能な機能を制限</td>
+                        </tr>
+                        <tr>
+                            <td>表示機能</td>
+                            <td>社員一覧を表示</td>
+                            <td>権限による表示情報制限</td>
+                        </tr>
+                        <tr>
+                            <td>検索機能</td>
+                            <td>名前検索・部署名検索が可能</td>
+                            <td>権限による表示情報制限</td>
+                        </tr>
+                        <tr>
+                            <td>CRUD</td>
+                            <td>登録・更新・削除が可能</td>
+                            <td>一般ユーザーは自身の更新のみに制限</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <h3 class="section-sub-title original-title">独自機能</h3>
+
+                <div class="table-wrap">
+                    <table class="feature-table feature-table--original">
+                        <thead>
+                            <tr>
+                                <th>機能名</th>
+                                <th>目的</th>
+                                <th>実装内容</th>
+                                <th>使用技術</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>権限に応じたデザイン変更</td>
+                                <td>誤操作・誤共有の防止 / UX向上</td>
+                                <td>管理者（権限2）でヘッダー/フッター/サイドバー/文字色を切替</td>
+                                <td>Thymeleaf / CSS</td>
+                            </tr>
+                            <tr>
+                                <td>パスワード表示切替・確認フォーム</td>
+                                <td>誤登録・誤送信の防止</td>
+                                <td>表示切替（password⇄text）＋確認入力の一致チェック＋Enter送信無効化</td>
+                                <td>JavaScript</td>
+                            </tr>
+                            <tr>
+                                <td>パスワードのハッシュ化</td>
+                                <td>漏洩時リスク低減</td>
+                                <td>登録/更新でBCryptハッシュ化、ログインで照合。DB制約を255に変更</td>
+                                <td>BCrypt / Oracle</td>
+                            </tr>
+                            <tr>
+                                <td>非同期ページング</td>
+                                <td>視認性向上 / HTML肥大化防止</td>
+                                <td>検索結果をページ分割し、Ajaxで一覧のみ部分更新</td>
+                                <td>Ajax / Spring / Pageable</td>
+                            </tr>
+                            <tr>
+                                <td>CSV出力/入力</td>
+                                <td>Excel連携 / 一括更新 / 保守性向上</td>
+                                <td>Excel対応CSVの出力、CSV読込で一括登録・更新＋一括バリデーション</td>
+                                <td>Java / Spring</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="section-sub-title">使用技術一覧</h3>
+
+                <div class="tech-list">
+                    <div class="tech-category">
+                        <h4 class="tech-card-title">バックエンド</h4>
+                        <ul>
+                            <li>Java 17</li>
+                            <li>Spring Boot 3.1.4</li>
+                            <li>Spring MVC（Webアプリ/API）</li>
+                            <li>Spring Data JPA（DB操作）</li>
+                            <li>Bean Validation（入力バリデーション）</li>
+                            <li>Spring Security Crypto（BCryptハッシュ化）</li>
+                            <li>OpenCSV（CSV入出力・パース）</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4 class="tech-card-title">View / フロント</h4>
+                        <ul>
+                            <li>Thymeleaf（テンプレート）</li>
+                            <li>HTML / CSS</li>
+                            <li>JavaScript / Ajax（部分更新）</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4 class="tech-card-title">データベース</h4>
+                        <ul>
+                            <li>Oracle Database（本番想定）</li>
+                            <li>H2 Database（開発/テスト）</li>
+                            <li>SQL（CRUD / 条件検索 / LIKE / ページング）</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-category">
+                        <h4 class="tech-card-title">開発・テスト</h4>
+                        <ul>
+                            <li>Maven（依存管理）</li>
+                            <li>Spring Boot DevTools</li>
+                            <li>Spring Boot Starter Test</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- <section class="section">
+            <h2 class="section-title">構成（MVC）</h2>
+
+            <div class="card-none-hover">
+                <p class="work-sentence">画面はThymeleafで描画し、Controller → Service → Repository の責務分離で実装しました。</p>
+                <p class="work-sentence">一覧の更新はAjaxで部分更新しています。</p>
+
+                <div class="mvc-diagram" role="group" aria-label="MVC構成図">
+                    <div class="mvc-step">
+                        <div class="mvc-title">View</div>
+                        <ul class="mvc-list">
+                            <li>Thymeleaf（画面描画）</li>
+                            <li>JavaScript（フォーム制御）</li>
+                            <li>Ajax（一覧の部分更新）</li>
+                        </ul>
+                    </div>
+
+                    <div class="mvc-connector" aria-hidden="true">⇄</div>
+
+                    <div class="mvc-step">
+                        <div class="mvc-title">Controller</div>
+                        <ul class="mvc-list">
+                            <li>リクエスト受付</li>
+                            <li>入力値の受け取り</li>
+                            <li>画面/JSONの返却（Ajax用）</li>
+                        </ul>
+                    </div>
+
+                    <div class="mvc-connector" aria-hidden="true">⇄</div>
+
+                    <div class="mvc-step">
+                        <div class="mvc-title">Service</div>
+                        <ul class="mvc-list">
+                            <li>業務ロジック</li>
+                            <li>入力チェック</li>
+                            <li>BCrypt（登録/照合）</li>
+                        </ul>
+                    </div>
+
+                    <div class="mvc-connector" aria-hidden="true">⇄</div>
+
+                    <div class="mvc-step">
+                        <div class="mvc-title">Repository</div>
+                        <ul class="mvc-list">
+                            <li>Spring Data JPA</li>
+                            <li>検索・ページング（Pageable）</li>
+                        </ul>
+                    </div>
+
+                    <div class="mvc-connector" aria-hidden="true">⇄</div>
+
+                    <div class="mvc-step">
+                        <div class="mvc-title">DB</div>
+                        <ul class="mvc-list">
+                            <li>Oracle</li>
+                            <li>社員 / 部署テーブル</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+
+    </main>
+</body>
+
+</html>

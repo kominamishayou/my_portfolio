@@ -1,0 +1,410 @@
+@charset "UTF-8";
+
+/* ベース設定 */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+	background-color: #f9fafb;
+	/* Tailwindの gray-50 */
+	color: #111827;
+	/* gray-900 */
+	line-height: 1.7;
+	margin: 0;
+}
+
+html {
+	width: 100%;
+	font-size: 18px;
+}
+
+/* レイアウト */
+.container {
+	/*  max-width: 1000px;*/
+	margin: 0 auto;
+	padding: 40px 20px;
+	width: 30rem;
+}
+
+/* ヘッダー */
+.page-header {
+	margin-bottom: 48px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5rem;
+	/* height: 26rem; */
+	padding-top: 4rem;
+}
+
+/*タイトル*/
+.hero-title {
+	text-align: center;
+	color: #6b7280;
+	font-size: 2.5rem;
+	height: 6rem;
+	margin-bottom: 2rem;
+	opacity: 0.3;
+	font-weight: 800;
+	white-space: nowrap;
+}
+
+/* プロフィール(子要素) */
+.ruby {
+	height: 1rem;
+}
+
+.page-header h1 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.role {
+	margin-left: .25rem;
+	margin-bottom: 1rem;
+}
+
+.page-header p {
+	color: #6b7280;
+}
+
+p.profile-sentence {
+	font-size: 1.2rem;
+}
+
+/* セクション共通 */
+.section {
+	margin: 0 auto 56px;
+}
+
+.section-title {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin-bottom: 24px;
+	border-left: 4px solid #3b82f6;
+	/* blue-500 */
+	padding-left: 12px;
+	/* 見出しを強調し、視線誘導しやすくする */
+}
+
+/* カードレイアウト */
+.card-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 24px;
+}
+
+/* カード本体 */
+.card {
+	background-color: #ffffff;
+	border: 2px solid #e5e7eb;
+	/* gray-200：分かりやすいボーダー */
+	border-radius: 12px;
+	padding: 24px;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* ホバー */
+.card:hover {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+	transform: translateY(-2px);
+}
+
+/* 背景として使うとき用 */
+.card-none-hover {
+	background-color: #ffffff;
+	border: 2px solid #e5e7eb;
+	/* gray-200：分かりやすいボーダー */
+	border-radius: 12px;
+	padding: 24px;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card h3 {
+	font-size: 1.1rem;
+	margin-bottom: 12px;
+}
+
+.card p {
+	color: #374151;
+	/* gray-700 */
+}
+
+.card li {
+	list-style: none;
+	color: #374151;
+	/* gray-700 */
+}
+
+/* バッジリスト */
+.skill-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+/* バッジ */
+.skill-badge {
+	background-color: #eff6ff;
+	/* blue-50 */
+	color: #2563eb;
+	/* blue-600 */
+	border: 1px solid #bfdbfe;
+	/* blue-200 */
+	padding: 6px 14px;
+	border-radius: 9999px;
+	/* fully rounded */
+	font-size: 0.9rem;
+	font-weight: 500;
+
+	position: relative;
+	cursor: pointer;
+}
+
+/* バッジホバー */
+/* 吹き出し本体 */
+.skill-badge::after {
+	content: attr(data-skill);
+	position: absolute;
+	bottom: 130%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	background-color: rgba(55, 65, 81, 0.9);
+	/* gray-700 + 少し透明 */
+	color: #ffffff;
+	padding: 6px 10px;
+	border-radius: 6px;
+	font-size: 0.75rem;
+	white-space: nowrap;
+
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+}
+
+/* 三角（しっぽ） */
+.skill-badge::before {
+	content: "";
+	position: absolute;
+	bottom: 120%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	border-width: 6px 6px 0 6px;
+	border-style: solid;
+	border-color: rgba(55, 65, 81, 0.9) transparent transparent transparent;
+
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+}
+
+
+/* hover時に表示 */
+.skill-badge:hover::after,
+.skill-badge:hover::before {
+	opacity: 1;
+}
+
+/* リンク*/
+.link {
+	display: inline-block;
+	margin-top: 12px;
+	color: #2563eb;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.link:hover {
+	text-decoration: underline;
+}
+
+/*CONTACT*/
+section.section.contact-section {
+	width: 30rem;
+	margin: 0;
+}
+
+form#contact-form {
+	display: flex;
+	flex-direction: column;
+	border: solid 1px gray;
+	border-radius: 10px;
+	padding: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+input.card.contact-card.inquirer-input {
+	width: 10rem;
+}
+
+.contact-sender-info input {
+	width: 20rem;
+}
+
+.contact-sender-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	gap: 0;
+	padding-bottom: 1.5rem;
+}
+
+.contact-lead {
+	color: #374151;
+	/* gray-700 */
+	margin-bottom: 1rem;
+}
+
+.card.contact-card {
+	padding: 0;
+	text-align: center;
+	background-color: #ffffff;
+	border-radius: 8px;
+	border: solid 1px gray;
+}
+
+.card.contact-card:hover {
+	box-shadow: none;
+	transform: none;
+}
+
+.contact-card input {
+	width: 80%;
+}
+
+.contact-card textarea {
+	width: 80%;
+	resize: none;
+	font-size: .75rem;
+	height: 5rem;
+}
+
+textarea.card.contact-card {
+	height: 12rem;
+	font-size: 0.8rem;
+}
+
+/* 入力欄は左から入力したいので left にする */
+#contact-form input,
+#contact-form textarea {
+	text-align: left;
+	padding: 0 0.5rem 0 0.5rem;
+}
+
+form p {
+	color: #374151;
+	/* gray-700 */
+}
+
+/* モーダルカード */
+.modal-card {
+	position: fixed;
+	inset: 0;
+	margin: auto;
+
+	width: 80%;
+	height: 80%;
+
+	overflow: auto;
+
+	display: none;
+	z-index: 1000;
+}
+
+.explanation-sentence {
+	border: 2px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 24px;
+	margin-bottom: 1rem;
+}
+
+.under-close {
+	text-align: end;
+}
+
+.modal-card-link {
+	text-align: center;
+}
+
+/* 表示トリガー */
+.modal-card:target {
+	display: block;
+}
+
+/* 背景オーバーレイ */
+#overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	z-index: 900;
+}
+
+.modal-card:target~#overlay {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/*所属企業*/
+.quote {
+	color: #6b7280;
+}
+
+/* WORK */
+p.work-sentence {
+	font-size: 1.2rem;
+	color: black
+}
+
+@media(min-width: 800px) {
+
+	/* コンテナ */
+	.container {
+		width: 80%;
+	}
+
+	/*	ヘッダー*/
+	.hero-title {
+		height: 6rem;
+		font-size: 3.5rem;
+	}
+
+	.page-header {
+		flex-direction: row;
+		justify-content: center;
+		padding-top: 0;
+		height: 20rem;
+	}
+
+	/*CONTACT*/
+	form#contact-form {
+		flex-direction: column;
+	}
+
+
+	/*モーダルカード*/
+	.modal-card-explanation {
+		display: flex;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.explanation-sentence {
+		width: 26rem;
+		border: 2px solid #e5e7eb;
+		border-radius: 12px;
+		padding: 24px;
+		height: 18rem;
+		/* overflow: auto; */
+		overflow-wrap: break-word;
+		display: flex;
+		flex-flow: column;
+		gap: 0.1rem;
+	}
+}

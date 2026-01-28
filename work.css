@@ -1,0 +1,183 @@
+/* セクションサブタイトル */
+.section-sub-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+  color: #111827; /* gray-900 */
+
+  padding-left: 10px;
+  border-left: 4px solid #6b7280; /* gray-500 */
+
+  display: inline-block;
+}
+
+
+/* 要件機能テーブル */
+.feature-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ヘッダー */
+.feature-table th {
+  background-color: #f3f4f6; /* gray-100 */
+  color: #111827;           /* gray-900 */
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #e5e7eb; /* gray-200 */
+}
+
+/* データセル */
+.feature-table td {
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  color: #374151; /* gray-700 */
+}
+
+/* 行のホバー */
+.feature-table tbody tr:hover {
+  background-color: #f9fafb; /* gray-50 */
+}
+
+/* 見出し行の強調 */
+.feature-table thead tr {
+  font-weight: 600;
+}
+
+/* テーブルラッパー */
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feature-table {
+  min-width: 680px; /* 列が多い場合の保険。調整OK */
+}
+
+/* 構成セクション */
+/* MVC 図全体 */
+.mvc-diagram {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: 10px;
+}
+
+/* 各ステップ（カード） */
+.mvc-step {
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 12px;
+  padding: 12px 12px 10px;
+  min-height: 140px;
+}
+
+/* 図内タイトル（section-sub-titleは使わない） */
+.mvc-title {
+  font-weight: 700;
+  color: #111827; /* gray-900 */
+  font-size: 1rem;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #f3f4f6; /* gray-100 */
+}
+
+/* 箇条書き */
+.mvc-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #374151; /* gray-700 */
+  font-size: 0.9rem;
+}
+
+.mvc-list li {
+  margin: 4px 0;
+}
+
+/* コネクタ（⇄） */
+.mvc-connector {
+  display: grid;
+  place-items: center;
+  color: #6b7280; /* gray-500 */
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: 0 2px;
+  user-select: none;
+}
+
+/* 使用技術 */
+.tech-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.tech-category {
+  background: #ffffff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.tech-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+  border-left: 4px solid #6b7280;
+  padding-left: 8px;
+}
+
+.tech-category ul {
+  padding-left: 1.2rem;
+  margin: 0;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.tech-category li {
+  margin: 4px 0;
+}
+
+
+/* スマホ：縦積み（つなぎは ↓ に） */
+@media (max-width: 1050px) {
+  .mvc-diagram {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .mvc-connector {
+    height: 18px;
+    font-size: 1.2rem;
+    padding: 0;
+  }
+
+  .mvc-connector::before {
+    content: "⇅";
+  }
+
+  .mvc-connector {
+    color: #9ca3af; /* gray-400 */
+  }
+}
+
+
+/* 使用技術セクション */
+.tech-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827; /* gray-900 */
+
+  margin-bottom: 8px;
+  padding-left: 10px;
+
+  
+  line-height: 1.4;
+}
+
