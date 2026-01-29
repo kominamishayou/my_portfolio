@@ -46,6 +46,7 @@
             <div class="card-none-hover">
                 <p class="work-sentence"><strong>目的</strong>: 研修3ヶ月目までに学んだ講義内容の理解度、及び実装力を測ること。</p>
                 <p class="work-sentence"><strong>内容</strong>: 社員の情報を一元管理（検索、登録、変更、削除）する Web アプリケーションの開発</p>
+                <p class="work-sentence"><strong>演習期間</strong>: 8日間(アプリ開発7日, 成果報告会報告会準備1日)</p>
                 <br>
                 <p class="work-sentence"><strong>演習形式</strong>:</p>
                 <p class="work-sentence">予め提示されたシステム要件に沿って実装を行う。 </p>
@@ -109,7 +110,7 @@
                                 <td>権限に応じたデザイン変更</td>
                                 <td>誤操作・誤共有の防止 / UX向上</td>
                                 <td>管理者（権限2）でヘッダー/フッター/サイドバー/文字色を切替</td>
-                                <td>Thymeleaf / CSS</td>
+                                <td>HTML(Thymeleaf) / CSS</td>
                             </tr>
                             <tr>
                                 <td>パスワード表示切替・確認フォーム</td>
@@ -120,20 +121,20 @@
                             <tr>
                                 <td>パスワードのハッシュ化</td>
                                 <td>漏洩時リスク低減</td>
-                                <td>登録/更新でBCryptハッシュ化、ログインで照合。DB制約を255に変更</td>
-                                <td>BCrypt / Oracle</td>
+                                <td>パスワード暗号化処理の実装、暗号化パスワードに対応したログイン照合機能の実装。DB制約を16charから255charに変更</td>
+                                <td>Java / Spring Security(Bcrypt)</td>
                             </tr>
                             <tr>
                                 <td>非同期ページング</td>
                                 <td>視認性向上 / HTML肥大化防止</td>
                                 <td>検索結果をページ分割し、Ajaxで一覧のみ部分更新</td>
-                                <td>Ajax / Spring / Pageable</td>
+                                <td>JavaScript(Ajax)/ Spring(Pageable)</td>
                             </tr>
                             <tr>
                                 <td>CSV出力/入力</td>
                                 <td>Excel連携 / 一括更新 / 保守性向上</td>
                                 <td>Excel対応CSVの出力、CSV読込で一括登録・更新＋一括バリデーション</td>
-                                <td>Java / Spring</td>
+                                <td>Java / 外部ライブラリ(OpenCSV)</td>
                             </tr>
                         </tbody>
                     </table>
@@ -150,7 +151,7 @@
                             <li>Spring MVC（Webアプリ/API）</li>
                             <li>Spring Data JPA（DB操作）</li>
                             <li>Bean Validation（入力バリデーション）</li>
-                            <li>Spring Security Crypto（BCryptハッシュ化）</li>
+                            <li>Spring Security（BCryptハッシュ化）</li>
                             <li>OpenCSV（CSV入出力・パース）</li>
                         </ul>
                     </div>
@@ -158,8 +159,7 @@
                     <div class="tech-category">
                         <h4 class="tech-card-title">View / フロント</h4>
                         <ul>
-                            <li>Thymeleaf（テンプレート）</li>
-                            <li>HTML / CSS</li>
+                            <li>HTML(Thymeleaf) / CSS</li>
                             <li>JavaScript / Ajax（部分更新）</li>
                         </ul>
                     </div>
@@ -169,7 +169,6 @@
                         <ul>
                             <li>Oracle Database（本番想定）</li>
                             <li>H2 Database（開発/テスト）</li>
-                            <li>SQL（CRUD / 条件検索 / LIKE / ページング）</li>
                         </ul>
                     </div>
 
@@ -178,7 +177,6 @@
                         <ul>
                             <li>Maven（依存管理）</li>
                             <li>Spring Boot DevTools</li>
-                            <li>Spring Boot Starter Test</li>
                         </ul>
                     </div>
                 </div>
